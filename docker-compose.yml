@@ -1,0 +1,8 @@
+services:
+  agentops:
+    build: .
+    env_file: .env
+    volumes:
+      - ./examples:/work/examples:ro
+    # Example:
+    # docker compose run --rm agentops "Review for prod" -f examples/deployment.yaml --trace
