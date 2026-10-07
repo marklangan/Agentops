@@ -15,6 +15,20 @@ make demo                    # offline run with FakeLLM
   -f examples/deployment.yaml --trace
 ```
 
+## GitHub setup (one-off)
+
+Needs the [GitHub CLI](https://cli.github.com) logged in (`gh auth login`).
+
+```bash
+./scripts/github_setup.sh agentops public
+```
+
+Creates the repo and pushes, then adds labels, milestones M2 to M6 with issues, squash-only
+merges, and branch protection requiring CI to pass. Re-running is safe.
+
+Work loop: pick an issue, branch, PR with `Closes #n`, CI passes, squash merge.
+Images publish to `ghcr.io/<you>/agentops` on every push to main.
+
 ## Docker
 
 ```bash

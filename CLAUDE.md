@@ -28,3 +28,12 @@ unless told otherwise.
 ## Owner background
 Owner is comfortable with Kubernetes, Terraform, AKS, GitHub Actions, Helm, Prometheus,
 Grafana and Trivy. Explain agent/LLM design choices; skip basics of the DevOps tooling.
+
+## GitHub workflow
+Work is tracked as GitHub issues grouped into milestones (M2 to M6). Use the `gh` CLI.
+- Pick work with `gh issue list --milestone "M2: Real tools"`.
+- One branch per issue: `git checkout -b <issue-number>-short-name`.
+- Small commits, imperative messages ("Add trivy tool to security agent").
+- Open a PR with `gh pr create --fill` and put `Closes #<n>` in the body.
+- CI (`test` job) must pass; PRs are squash merged and branches auto-deleted.
+- Never push directly to main.
